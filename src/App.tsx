@@ -23,8 +23,8 @@ export default function App() {
           <span className="font-pixel text-2xl tracking-widest text-[#00FF41]">qopy</span>
         </div>
         <div className="flex items-center gap-4">
-          <a href="#" className="text-sm text-zinc-400 hover:text-[#00FF41] transition-colors font-pixel uppercase">Twitter</a>
-          <a href="#" className="text-sm text-zinc-400 hover:text-[#00FF41] transition-colors font-pixel uppercase">GitHub</a>
+          <a href="http://twitter.com/combif1am" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-[#00FF41] transition-colors font-pixel uppercase">Twitter</a>
+          <a href="https://github.com/Srihar1-raman/qopy" target="_blank" rel="noopener noreferrer" className="text-sm text-zinc-400 hover:text-[#00FF41] transition-colors font-pixel uppercase">GitHub</a>
         </div>
       </nav>
 
@@ -318,8 +318,6 @@ export default function App() {
             &copy; {new Date().getFullYear()} qopy app. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase">Privacy</a>
-            <a href="#" className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase">Terms</a>
             <a href="#" className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase">Contact</a>
           </div>
         </div>
