@@ -1,0 +1,5 @@
+{
+  "name": "qopy",
+  "description": "A simple Mac app to copy text from screen grabs to the clipboard in one click.",
+  "requestFramePermissions": []
+}
