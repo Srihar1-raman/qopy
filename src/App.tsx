@@ -66,10 +66,12 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
           >
+            <a href="/qopy.dmg" download className="no-underline">
             <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
               <Download className="w-5 h-5" />
               Download for Mac
             </Button>
+            </a>
             <p className="text-xs text-zinc-500 font-pixel uppercase">Requires macOS 12.0+</p>
           </motion.div>
         </div>
