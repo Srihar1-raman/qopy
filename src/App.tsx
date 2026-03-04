@@ -299,7 +299,7 @@ export default function App() {
         
         {/* Bottom CTA */}
         <div className="text-center border-t border-zinc-900 pt-32 pb-16">
-          <h2 className="text-3xl md:text-5xl font-pixel text-white mb-8">READY TO COPY?</h2>
+          <h2 className="text-3xl md:text-5xl font-pixel text-white mb-8">READY TO QOPY?</h2>
           <a href="/qopy.dmg" download className="no-underline">
           <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
             <Download className="w-5 h-5" />
