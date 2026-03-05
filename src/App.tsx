@@ -75,7 +75,7 @@ export default function App() {
               Download for Mac
             </Button>
             </a>
-            <p className="text-xs text-zinc-500 font-pixel uppercase">Requires macOS 12.0+</p>
+            <p className="text-xs text-zinc-500 font-pixel uppercase">Requires macOS 14+</p>
           </motion.div>
         </div>
 
@@ -199,8 +199,17 @@ export default function App() {
           </div>
         </div>
         
-        {/* Installation Demo Section */}
-        <div className="text-center mb-16">
+        {/* Installation Demo Section - Mobile friendly */}
+        <div className="text-center mb-16 md:hidden">
+          <h2 className="text-3xl font-pixel text-white mb-4">EASY INSTALL</h2>
+          <p className="text-zinc-400 font-sans mb-8 px-4">Download .dmg → Open → Drag to Applications folder</p>
+          <div className="inline-flex items-center gap-3 bg-zinc-900 border-2 border-[#00FF41] rounded-lg px-6 py-4 mb-32">
+            <File className="w-8 h-8 text-[#00FF41]" />
+            <span className="font-pixel text-[#00FF41]">qopy.dmg</span>
+          </div>
+        </div>
+        
+        <div className="hidden md:block text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-pixel text-white mb-4">EASY INSTALL</h2>
           <p className="text-zinc-400 font-sans">Just drag and drop. No complex installers.</p>
         </div>
@@ -210,7 +219,7 @@ export default function App() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative mx-auto max-w-4xl rounded-lg border-2 border-[#00FF41] bg-zinc-900 shadow-[0_0_30px_rgba(0,255,65,0.2)] p-2 mb-32"
+          className="hidden md:block relative mx-auto max-w-4xl rounded-lg border-2 border-[#00FF41] bg-zinc-900 shadow-[0_0_30px_rgba(0,255,65,0.2)] p-2 mb-32"
         >
           <div className="absolute top-0 left-0 w-full h-8 bg-black border-b-2 border-[#00FF41] flex items-center px-4 gap-2">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
