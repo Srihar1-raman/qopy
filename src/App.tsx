@@ -310,7 +310,7 @@ export default function App() {
           transition={{ duration: 0.7 }}
           className="mb-32"
         >
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-5 gap-6">
             {/* Step 1 */}
             <div className="flex flex-col items-center gap-4">
               <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
@@ -336,11 +336,33 @@ export default function App() {
             {/* Step 3 */}
             <div className="flex flex-col items-center gap-4">
               <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
-                <img src="/third.webp" alt="Allow Screen Recording" className="w-full h-full object-contain rounded" />
+                <img src="/fourth.png" alt="Accessibility Permission" className="w-full h-full object-contain rounded" />
               </div>
               <div className="text-center">
                 <h3 className="font-pixel text-lg text-white mb-2">STEP 3</h3>
-                <p className="text-sm text-zinc-400 font-sans">When you first use qopy (menu bar icon or hotkey), a popup will request screen recording access. Click <strong>Allow</strong>. If another permission popup appears, allow that too.</p>
+                <p className="text-sm text-zinc-400 font-sans">A popup will request <strong>accessibility</strong> access. Click <strong>"Open System Settings"</strong> and enable qopy.</p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
+                <img src="/third.webp" alt="Screen Recording Permission" className="w-full h-full object-contain rounded" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-pixel text-lg text-white mb-2">STEP 4</h3>
+                <p className="text-sm text-zinc-400 font-sans">A popup will request <strong>screen recording</strong> access. Click <strong>"Open System Settings"</strong> and enable qopy.</p>
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
+                <img src="/five.png" alt="Allow Screen Recording" className="w-full h-full object-contain rounded" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-pixel text-lg text-white mb-2">STEP 5</h3>
+                <p className="text-sm text-zinc-400 font-sans">Click <strong>Allow</strong> to grant screen recording permission. If another popup appears, allow that too.</p>
               </div>
             </div>
           </div>
