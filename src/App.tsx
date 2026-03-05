@@ -297,6 +297,55 @@ export default function App() {
           </div>
         </motion.div>
         
+        {/* Troubleshooting Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-pixel text-white mb-4">TROUBLESHOOTING</h2>
+          <p className="text-zinc-400 font-sans">If "qopy" was blocked on first launch, follow these steps:</p>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mb-32"
+        >
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
+                <img src="/first.webp" alt="System Preferences Privacy & Security" className="w-full h-full object-contain rounded" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-pixel text-lg text-white mb-2">STEP 1</h3>
+                <p className="text-sm text-zinc-400 font-sans">Go to <strong>System Settings</strong> → <strong>Privacy & Security</strong>, scroll down, and click <strong>"Open Anyway"</strong></p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
+                <img src="/second.webp" alt="Click Open Anyway Again" className="w-full h-full object-contain rounded" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-pixel text-lg text-white mb-2">STEP 2</h3>
+                <p className="text-sm text-zinc-400 font-sans">A second popup will appear. Click <strong>"Open Anyway"</strong> again, then enter your <strong>computer password</strong> when prompted.</p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
+                <img src="/third.webp" alt="Allow Screen Recording" className="w-full h-full object-contain rounded" />
+              </div>
+              <div className="text-center">
+                <h3 className="font-pixel text-lg text-white mb-2">STEP 3</h3>
+                <p className="text-sm text-zinc-400 font-sans">When you first use qopy (menu bar icon or hotkey), a popup will request screen recording access. Click <strong>Allow</strong>. If another permission popup appears, allow that too.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+        
         {/* Bottom CTA */}
         <div className="text-center border-t border-zinc-900 pt-32 pb-16">
           <h2 className="text-3xl md:text-5xl font-pixel text-white mb-8">READY TO QOPY?</h2>
