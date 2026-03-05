@@ -458,8 +458,8 @@ export default function App() {
             <div className="text-zinc-300 font-sans text-sm space-y-4">
               <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
               
-              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">1. OUR PRIVACY COMMITMENT</h3>
-              <p>qopy is designed with privacy as a core principle. The application ensures user data stays on the device.</p>
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">1. PRIVACY COMMITMENT</h3>
+              <p>qopy operates entirely offline. All text recognition happens locally on the device using Apple's Vision Framework.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">2. WHAT IS NOT COLLECTED</h3>
               <ul className="list-disc pl-6 space-y-2">
