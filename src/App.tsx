@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 import { Download, Command, Zap, Shield, MousePointer2, Copy, Check, File, HardDrive, Folder, X } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card";
+import { track } from "@vercel/analytics";
 
 export default function App() {
   const [showTerms, setShowTerms] = useState(false);
@@ -69,7 +70,7 @@ export default function App() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center gap-4 pt-4"
           >
-            <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => { if (typeof window !== 'undefined' && (window as any).va) { (window as any).va('event', { name: 'download_click_top' }) } }}>
+            <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_top')}>
             <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
               <Download className="w-5 h-5" />
               Download for Mac
@@ -383,7 +384,7 @@ export default function App() {
         {/* Bottom CTA */}
         <div className="text-center border-t border-zinc-900 pt-32 pb-16">
           <h2 className="text-3xl md:text-5xl font-pixel text-white mb-8">READY TO QOPY?</h2>
-          <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => { if (typeof window !== 'undefined' && (window as any).va) { (window as any).va('event', { name: 'download_click_bottom' }) } }}>
+          <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_bottom')}>
           <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
             <Download className="w-5 h-5" />
             Download for Mac
