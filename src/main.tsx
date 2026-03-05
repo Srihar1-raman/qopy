@@ -4,7 +4,7 @@ import App from './App.tsx';
 import './index.css';
 import { inject } from "@vercel/analytics"
 
-inject({ mode: 'production' })
+inject()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
