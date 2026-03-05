@@ -202,7 +202,7 @@ export default function App() {
         {/* Installation Demo Section - Mobile friendly */}
         <div className="text-center mb-16 md:hidden">
           <h2 className="text-3xl font-pixel text-white mb-4">EASY INSTALL</h2>
-          <p className="text-zinc-400 font-sans mb-8 px-4">Download .dmg → Open → Drag app to Applications</p>
+          <p className="text-zinc-400 font-sans mb-8 px-4">Download .dmg → Open → Driver appears on desktop → Drag app to Applications</p>
           <div className="inline-flex items-center gap-3 bg-zinc-900 border-2 border-[#00FF41] rounded-lg px-6 py-4 mb-32">
             <File className="w-8 h-8 text-[#00FF41]" />
             <span className="font-pixel text-[#00FF41]">qopy.dmg</span>
