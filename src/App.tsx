@@ -423,20 +423,23 @@ export default function App() {
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">3. TECHNOLOGY</h3>
               <p>qopy utilizes Apple's native on-device Optical Character Recognition (OCR) technology (Vision Framework) to extract text from screen content. All text recognition processing occurs locally on your device. No images, screenshots, or extracted text are transmitted to any external servers.</p>
               
-              <h3 className="text41] font-pixel-[#00FF text-lg mt-4">4. PRIVACY & DATA</h3>
-              <p>qopy does not collect, store, or transmit any personal data, usage analytics, or user content. The application operates entirely offline. When you grant screen recording permission, qopy captures screen content solely for the purpose of performing OCR text extraction within the application memory. This data is not saved, logged, or shared with any third party.</p>
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">4. PRIVACY & DATA</h3>
+              <p>qopy does not collect, store, or transmit any personal data, usage analytics, or user content. The application operates entirely offline. When screen recording permission is granted, qopy captures screen content solely for performing OCR text extraction within the application memory. This data is not saved, logged, or shared with any third party.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">5. PERMISSIONS</h3>
-              <p>qopy requires certain macOS permissions to function: screen recording and accessibility. These permissions are used exclusively for capturing screen content and enabling global hotkeys. qopy does not use these permissions for any purpose other than its core text extraction functionality.</p>
+              <p>qopy requires certain macOS permissions to function: screen recording and accessibility. These permissions are used exclusively for capturing screen content and enabling global hotkeys. The permissions are not used for any purpose other than core text extraction functionality.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">6. DISCLAIMER</h3>
-              <p>qopy is provided without warranties of any kind, express or implied. We do not guarantee that the software will be error-free or uninterrupted. You use the software at your own risk.</p>
+              <p>qopy is provided without warranties of any kind, express or implied. The software is not guaranteed to be error-free or uninterrupted. Use of the software is at the user's own risk.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">7. LIMITATION OF LIABILITY</h3>
-              <p>In no event shall the developers of qopy be liable out of the use or inability to for any damages arising use the software, including but not limited to loss of data, profits, or business interruption.</p>
+              <p>In no event shall the developers of qopy be liable for any damages arising out of the use or inability to use the software, including but not limited to loss of data, profits, or business interruption.</p>
               
-              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">8. CONTACT</h3>
-              <p>For questions about these terms, contact us through our GitHub repository or Twitter.</p>
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">8. WEBSITE ANALYTICS</h3>
+              <p>The qopy website uses Vercel Analytics for traffic analysis. This applies only to the website at qopy.app, not to the downloaded application. The downloaded .dmg file does not contain any analytics or tracking functionality.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">9. CONTACT</h3>
+              <p>For questions about these terms, contact through the GitHub repository or Twitter.</p>
             </div>
           </div>
         </div>
@@ -456,9 +459,9 @@ export default function App() {
               <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">1. OUR PRIVACY COMMITMENT</h3>
-              <p>qopy is designed with privacy as a core principle. We believe your data belongs to you, and we have built this application to ensure it stays that way.</p>
+              <p>qopy is designed with privacy as a core principle. The application ensures user data stays on the device.</p>
               
-              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">2. WHAT WE DON'T COLLECT</h3>
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">2. WHAT IS NOT COLLECTED</h3>
               <ul className="list-disc pl-6 space-y-2">
                 <li>No personal information</li>
                 <li>No usage analytics or telemetry</li>
@@ -469,11 +472,11 @@ export default function App() {
               </ul>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">3. HOW qopy WORKS</h3>
-              <p>qopy uses Apple's built-in Vision Framework (OCR) to recognize text from screen content. When you use qopy:</p>
+              <p>qopy uses Apple's built-in Vision Framework (OCR) to recognize text from screen content. When qopy is used:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Screen content is captured temporarily in memory only</li>
                 <li>Text recognition is performed entirely on-device using Apple's native APIs</li>
-                <li>Extracted text is copied directly to your clipboard</li>
+                <li>Extracted text is copied directly to the clipboard</li>
                 <li>All data is discarded immediately after processing</li>
                 <li>Nothing is saved, stored, or transmitted</li>
               </ul>
@@ -484,19 +487,19 @@ export default function App() {
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">5. PERMISSIONS EXPLAINED</h3>
               <p>qopy requires macOS permissions to function:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Screen Recording:</strong> Required to capture screen content for text extraction. Used only when you actively invoke qopy.</li>
+                <li><strong>Screen Recording:</strong> Required to capture screen content for text extraction. Used only when qopy is actively invoked.</li>
                 <li><strong>Accessibility:</strong> Required to enable global keyboard shortcuts. Not used for any other purpose.</li>
               </ul>
-              <p className="mt-2">These permissions are granted by you through macOS system settings and can be revoked at any time.</p>
+              <p className="mt-2">These permissions are granted through macOS system settings and can be revoked at any time.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">6. THIRD PARTIES</h3>
-              <p>qopy does not share any data with third parties. We have no analytics providers, no advertising networks, and no affiliate partners.</p>
+              <p>qopy does not share any data with third parties. There are no analytics providers, advertising networks, or affiliate partners.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">7. CHANGES TO POLICY</h3>
-              <p>If we update this policy, it will be to clarify our practices. Our fundamental commitment to privacy will never change.</p>
+              <p>If this policy is updated, it will be to clarify practices. The fundamental commitment to privacy will not change.</p>
               
               <h3 className="text-[#00FF41] font-pixel text-lg mt-4">8. CONTACT</h3>
-              <p>For privacy concerns or questions, contact us through our GitHub repository.</p>
+              <p>For privacy concerns or questions, contact through the GitHub repository.</p>
             </div>
           </div>
         </div>
