@@ -347,7 +347,7 @@ export default function App() {
             {/* Step 4 */}
             <div className="flex flex-col items-center gap-4">
               <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
-                <img src="/third.webp" alt="Screen Recording Permission" className="w-full h-full object-contain rounded" />
+                <img src="/five.png" alt="Screen Recording Permission" className="w-full h-full object-contain rounded" />
               </div>
               <div className="text-center">
                 <h3 className="font-pixel text-lg text-white mb-2">STEP 4</h3>
@@ -358,7 +358,7 @@ export default function App() {
             {/* Step 5 */}
             <div className="flex flex-col items-center gap-4">
               <div className="w-full aspect-[4/3] bg-zinc-900 rounded-lg border-2 border-[#00FF41] overflow-hidden flex items-center justify-center p-2">
-                <img src="/five.png" alt="Allow Screen Recording" className="w-full h-full object-contain rounded" />
+                <img src="/third.webp" alt="Allow Screen Recording" className="w-full h-full object-contain rounded" />
               </div>
               <div className="text-center">
                 <h3 className="font-pixel text-lg text-white mb-2">STEP 5</h3>
