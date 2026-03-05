@@ -3,12 +3,15 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useState } from "react";
 import { motion } from "motion/react";
-import { Download, Command, Zap, Shield, MousePointer2, Copy, Check, File, HardDrive, Folder } from "lucide-react";
+import { Download, Command, Zap, Shield, MousePointer2, Copy, Check, File, HardDrive, Folder, X } from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/src/components/ui/card";
 
 export default function App() {
+  const [showTerms, setShowTerms] = useState(false);
+  const [showPrivacy, setShowPrivacy] = useState(false);
   return (
     <div className="min-h-screen bg-black text-white selection:bg-[#00FF41] selection:text-black relative overflow-hidden crt">
       <div className="scanline"></div>
@@ -391,10 +394,113 @@ export default function App() {
             &copy; {new Date().getFullYear()} qopy app. All rights reserved.
           </p>
           <div className="flex gap-4">
+            <button onClick={() => setShowTerms(true)} className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase cursor-pointer bg-transparent border-none">Terms</button>
+            <button onClick={() => setShowPrivacy(true)} className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase cursor-pointer bg-transparent border-none">Privacy</button>
             <a href="#" className="text-xs text-zinc-600 hover:text-[#00FF41] font-pixel uppercase">Contact</a>
           </div>
         </div>
       </footer>
+
+      {/* Terms Modal */}
+      {showTerms && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={() => setShowTerms(false)}>
+          <div className="bg-zinc-900 border-2 border-[#00FF41] rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-pixel text-white">TERMS OF SERVICE</h2>
+              <button onClick={() => setShowTerms(false)} className="text-zinc-400 hover:text-white bg-transparent border-none cursor-pointer">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="text-zinc-300 font-sans text-sm space-y-4">
+              <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">1. ACCEPTANCE OF TERMS</h3>
+              <p>By downloading, installing, or using qopy, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the application.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">2. USE OF SOFTWARE</h3>
+              <p>qopy is provided "as is" for personal use on macOS devices. You may not copy, modify, distribute, sell, or lease any part of the software without prior written consent.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">3. TECHNOLOGY</h3>
+              <p>qopy utilizes Apple's native on-device Optical Character Recognition (OCR) technology (Vision Framework) to extract text from screen content. All text recognition processing occurs locally on your device. No images, screenshots, or extracted text are transmitted to any external servers.</p>
+              
+              <h3 className="text41] font-pixel-[#00FF text-lg mt-4">4. PRIVACY & DATA</h3>
+              <p>qopy does not collect, store, or transmit any personal data, usage analytics, or user content. The application operates entirely offline. When you grant screen recording permission, qopy captures screen content solely for the purpose of performing OCR text extraction within the application memory. This data is not saved, logged, or shared with any third party.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">5. PERMISSIONS</h3>
+              <p>qopy requires certain macOS permissions to function: screen recording and accessibility. These permissions are used exclusively for capturing screen content and enabling global hotkeys. qopy does not use these permissions for any purpose other than its core text extraction functionality.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">6. DISCLAIMER</h3>
+              <p>qopy is provided without warranties of any kind, express or implied. We do not guarantee that the software will be error-free or uninterrupted. You use the software at your own risk.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">7. LIMITATION OF LIABILITY</h3>
+              <p>In no event shall the developers of qopy be liable out of the use or inability to for any damages arising use the software, including but not limited to loss of data, profits, or business interruption.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">8. CONTACT</h3>
+              <p>For questions about these terms, contact us through our GitHub repository or Twitter.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Privacy Modal */}
+      {showPrivacy && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80" onClick={() => setShowPrivacy(false)}>
+          <div className="bg-zinc-900 border-2 border-[#00FF41] rounded-lg max-w-2xl max-h-[80vh] overflow-y-auto p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-pixel text-white">PRIVACY POLICY</h2>
+              <button onClick={() => setShowPrivacy(false)} className="text-zinc-400 hover:text-white bg-transparent border-none cursor-pointer">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="text-zinc-300 font-sans text-sm space-y-4">
+              <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">1. OUR PRIVACY COMMITMENT</h3>
+              <p>qopy is designed with privacy as a core principle. We believe your data belongs to you, and we have built this application to ensure it stays that way.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">2. WHAT WE DON'T COLLECT</h3>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>No personal information</li>
+                <li>No usage analytics or telemetry</li>
+                <li>No screenshots or images</li>
+                <li>No extracted text or clipboard content</li>
+                <li>No device or usage statistics</li>
+                <li>No cookies or tracking</li>
+              </ul>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">3. HOW qopy WORKS</h3>
+              <p>qopy uses Apple's built-in Vision Framework (OCR) to recognize text from screen content. When you use qopy:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Screen content is captured temporarily in memory only</li>
+                <li>Text recognition is performed entirely on-device using Apple's native APIs</li>
+                <li>Extracted text is copied directly to your clipboard</li>
+                <li>All data is discarded immediately after processing</li>
+                <li>Nothing is saved, stored, or transmitted</li>
+              </ul>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">4. NO NETWORK TRANSMISSION</h3>
+              <p>qopy does not make any network requests. The application does not connect to the internet for its core functionality. There is no server, cloud service, or third-party API involved in the text extraction process.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">5. PERMISSIONS EXPLAINED</h3>
+              <p>qopy requires macOS permissions to function:</p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><strong>Screen Recording:</strong> Required to capture screen content for text extraction. Used only when you actively invoke qopy.</li>
+                <li><strong>Accessibility:</strong> Required to enable global keyboard shortcuts. Not used for any other purpose.</li>
+              </ul>
+              <p className="mt-2">These permissions are granted by you through macOS system settings and can be revoked at any time.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">6. THIRD PARTIES</h3>
+              <p>qopy does not share any data with third parties. We have no analytics providers, no advertising networks, and no affiliate partners.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">7. CHANGES TO POLICY</h3>
+              <p>If we update this policy, it will be to clarify our practices. Our fundamental commitment to privacy will never change.</p>
+              
+              <h3 className="text-[#00FF41] font-pixel text-lg mt-4">8. CONTACT</h3>
+              <p>For privacy concerns or questions, contact us through our GitHub repository.</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
