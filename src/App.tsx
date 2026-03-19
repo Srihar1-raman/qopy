@@ -189,6 +189,7 @@ export default function App() {
               <div className="w-16 h-16 rounded-full border-2 border-[#00FF41] flex items-center justify-center text-2xl font-pixel text-[#00FF41]">1</div>
               <p className="font-pixel text-lg">PRESS SHORTCUT</p>
               <p className="text-sm text-zinc-400 font-sans">Cmd + Shift + 2</p>
+              <p className="text-sm text-zinc-400 font-sans">Ctrl + Alt + Q (Windows)</p>
             </div>
             <div className="hidden md:block w-16 h-0.5 bg-zinc-800 relative">
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#00FF41] rotate-45"></div>
