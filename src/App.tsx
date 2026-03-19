@@ -76,7 +76,16 @@ export default function App() {
               Download for Mac
             </Button>
             </a>
-            <p className="text-xs text-zinc-500 font-pixel uppercase">Requires macOS 14+</p>
+            <a href="https://github.com/Srihar1-raman/qopy-releases/raw/main/qopy-windows.exe" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_windows_top')}>
+            <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
+              <Download className="w-5 h-5" />
+              Download for Windows
+            </Button>
+            </a>
+            <div className="flex flex-col items-center sm:items-start gap-1">
+              <p className="text-xs text-zinc-500 font-pixel uppercase">Requires macOS 14+</p>
+              <p className="text-xs text-zinc-500 font-pixel uppercase">Windows hotkey: Ctrl + Alt + Q</p>
+            </div>
           </motion.div>
         </div>
 
@@ -384,12 +393,21 @@ export default function App() {
         {/* Bottom CTA */}
         <div className="text-center border-t border-zinc-900 pt-32 pb-16">
           <h2 className="text-3xl md:text-5xl font-pixel text-white mb-8">READY TO QOPY?</h2>
-          <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_bottom')}>
-          <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
-            <Download className="w-5 h-5" />
-            Download for Mac
-          </Button>
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_bottom')}>
+            <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
+              <Download className="w-5 h-5" />
+              Download for Mac
+            </Button>
+            </a>
+            <a href="https://github.com/Srihar1-raman/qopy-releases/raw/main/qopy-windows.exe" target="_blank" rel="noopener noreferrer" className="no-underline" onClick={() => track('download_click_windows_bottom')}>
+            <Button variant="pixel" size="lg" className="gap-2 text-lg h-14 px-8">
+              <Download className="w-5 h-5" />
+              Download for Windows
+            </Button>
+            </a>
+          </div>
+          <p className="mt-3 text-xs text-zinc-500 font-pixel uppercase">Windows hotkey: Ctrl + Alt + Q</p>
         </div>
       </main>
 
