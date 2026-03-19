@@ -190,6 +190,18 @@ export default function App() {
               <p className="font-pixel text-lg">PRESS SHORTCUT</p>
               <p className="text-sm text-zinc-400 font-sans">Cmd + Shift + 2</p>
               <p className="text-sm text-zinc-400 font-sans">Ctrl + Alt + Q (Windows)</p>
+              <p className="text-xs text-zinc-500 font-pixel uppercase">
+                Windows OCR requires Tesseract:{" "}
+                <a
+                  href="https://github.com/UB-Mannheim/tesseract/wiki"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#00FF41] hover:underline"
+                  onClick={() => track('tesseract_click_how_it_works')}
+                >
+                  download
+                </a>
+              </p>
             </div>
             <div className="hidden md:block w-16 h-0.5 bg-zinc-800 relative">
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-[#00FF41] rotate-45"></div>
