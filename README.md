@@ -22,15 +22,15 @@ npm run check:cloudflare
 npm run preview:cloudflare
 ```
 
-- `check:cloudflare` runs TypeScript, builds `dist/`, and validates a Wrangler dry run. It does not upload or deploy.
+- `check:cloudflare` runs TypeScript, the video-serving tests, builds `dist/`, and validates a Wrangler dry run. It does not upload or deploy.
 - `preview:cloudflare` builds and serves the production files locally at `http://127.0.0.1:8787` using Cloudflare's runtime. No Cloudflare login is needed.
-- The site has no API, database, runtime secrets, or server-side code. Do not copy old template API keys into hosting settings.
+- The site has no API, database, or runtime secrets. A small Worker serves byte ranges for the social-preview video. Do not copy old template API keys into hosting settings.
 
 ## Hosting choice
 
 Use **Cloudflare Workers Static Assets**. Cloudflare recommends Workers for new projects; its [Vercel migration guide](https://developers.cloudflare.com/workers/static-assets/migration-guides/vercel-to-workers/) supports serving an existing build directory directly. Pages would also serve this static site, but adds no needed capability here. See [Pages migration guidance](https://developers.cloudflare.com/pages/migrations/).
 
-`wrangler.jsonc` serves `dist/` without a Worker entrypoint, bindings, or Cloudflare Vite plugin. All navigation is `/` plus hash anchors; legal content uses dialogs. Unknown paths return 404. If real client-side routes are added later, review the fallback setting.
+`wrangler.jsonc` serves `dist/`. Only `/social/qopy-demo-v1.mp4` uses `worker/index.ts` and the `ASSETS` binding, via [selective Worker-first routing](https://developers.cloudflare.com/workers/static-assets/routing/worker-script/). All other assets retain static serving. All navigation is `/` plus hash anchors; legal content uses dialogs. Unknown paths return 404. If real client-side routes are added later, review the fallback setting.
 
 The Mac buttons still use [GitHub Releases](https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg). Moving the website does not move or change the app release. The existing `public/qopy.dmg` remains in the repository, but the buttons do not use it.
 
@@ -84,3 +84,11 @@ Cloudflare may [inject Web Analytics at the edge](https://blog.cloudflare.com/th
 Keep versioned media filenames immutable. Publish a new filename when changing a card/video and update the metadata; social platforms can cache old previews. Re-fetch with the platform's official inspector where available. Platform account-based previews and search indexing are not validated merely by a successful deployment.
 
 After deployment, check raw HTML and live crawler files, image/video MIME types and HTTP responses. Cloudflare's zone-level bot controls can override origin crawl rules; a robots allowance is not a firewall bypass. Maintain the explicit legal revision date when policy wording actually changes.
+
+### MP4 byte ranges
+
+The deployed static MP4 endpoint originally ignored `Range` requests. The bounded Worker now returns actual partial bytes with `206`, `Content-Range`, and `Content-Length`; normal GET/HEAD retain `200`, unsatisfiable ranges return `416`, and conditional validators are preserved. [Apple's iOS media guidance](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/CreatingVideoforSafarioniPhone/CreatingVideoforSafarioniPhone.html) requires byte-range support for media hosting. This corrects a hosting requirement, but does not prove an iMessage client will choose or autoplay the video.
+
+The handler buffers only this small preview (the build caps it below 1 MB). Do not use it for large media files. `npm run test:worker` covers full, initial, offset, suffix, open-ended, malformed and unsatisfiable ranges, HEAD, validators and unrelated paths. After deploying, verify `Range: bytes=0-99` returns exactly 100 bytes and `Content-Range: bytes 0-99/159131` on the public endpoint. Recheck the size if the clip changes.
+
+The preview video and unmatched paths invoke the Worker; existing pages and other assets keep [free static-asset serving](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/). No storage bucket, paid upgrade, new credential, or zone-wide cache setting is required. Do not enable Worker-wide caching merely for this fix: it would change the billing behavior of otherwise-static requests.

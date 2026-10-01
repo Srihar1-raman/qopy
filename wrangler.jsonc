@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "qopy",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
   "send_metrics": false,
   "workers_dev": true,
@@ -12,6 +13,9 @@
   ],
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    // Only the social video needs byte-range handling. Everything else stays static.
+    "run_worker_first": ["/social/qopy-demo-v1.mp4"],
     // Navigation uses hash anchors, not client-side routes. Unknown paths stay 404.
     "not_found_handling": "none"
   }
