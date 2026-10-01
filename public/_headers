@@ -21,3 +21,10 @@
 /social/qopy-demo-v1.mp4
   Content-Type: video/mp4
   Cache-Control: public, max-age=31536000, immutable
+
+/social/qopy-share-v2.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/social/qopy-share-v2.mp4
+  Content-Type: video/mp4
+  Cache-Control: public, max-age=31536000, immutable

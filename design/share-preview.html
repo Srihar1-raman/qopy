@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>qopy social preview composition</title>
+    <style>
+      html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: #faf9f6; }
+      .share-frame { display: block; width: 1200px; height: 630px; }
+      #preview-demo { position: absolute; left: 640px; top: 148px; width: 500px; }
+      #preview-demo .demo-controls, #preview-demo .demo-timeline { display: none; }
+      #preview-demo .demo-screen { border-radius: 24px; border-color: #cbd5e7; box-shadow: 0 14px 34px #2e427512; }
+    </style>
+  </head>
+  <body>
+    <img class="share-frame" src="./share-preview-frame.svg" alt="qopy — Copy text from your screen. macOS 14+" />
+    <div id="preview-demo"></div>
+    <script type="module" src="./share-preview.tsx"></script>
+  </body>
+</html>

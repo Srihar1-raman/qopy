@@ -1,4 +1,9 @@
-const previewPath = '/social/qopy-demo-v1.mp4';
+// Keep this allowlist aligned with assets.run_worker_first in wrangler.jsonc.
+// Existing versioned previews stay immutable and keep working for cached cards.
+const previewPaths = new Set([
+  '/social/qopy-demo-v1.mp4',
+  '/social/qopy-share-v2.mp4',
+]);
 
 type Env = { ASSETS: { fetch(request: Request): Promise<Response> } };
 type ByteRange = { start: number; end: number } | 'unsatisfiable' | null;
@@ -31,7 +36,7 @@ function ifRangeMatches(value: string | null, headers: Headers): boolean {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    if (new URL(request.url).pathname !== previewPath || !['GET', 'HEAD'].includes(request.method)) {
+    if (!previewPaths.has(new URL(request.url).pathname) || !['GET', 'HEAD'].includes(request.method)) {
       return env.ASSETS.fetch(request);
     }
 
@@ -54,8 +59,8 @@ export default {
       return new Response(asset.body, { status: 200, headers });
     }
 
-    // This fixed preview is 159 KB; the build enforces a <1 MB cap. Buffering this
-    // one small asset keeps the implementation bounded without a storage service.
+    // Only the explicitly listed previews are buffered; checks enforce a <1 MB
+    // cap for each. Do not broaden this handler to arbitrary or large media.
     const body = await asset.arrayBuffer();
     const range = parseRange(rangeValue, body.byteLength);
     headers.delete('content-encoding');

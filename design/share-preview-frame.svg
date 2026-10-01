@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">qopy — Copy text from your screen.</title>
+  <desc id="description">The qopy logo and Copy text from your screen headline on an off-white background. The matching preview places a simulated demo on the right.</desc>
+  <!-- Editable, code-native social card. Palette and QopyMark geometry match src/App.tsx. -->
+  <defs>
+    <filter id="paper-shadow" x="-30%" y="-30%" width="160%" height="185%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#384261" flood-opacity=".04"/>
+      <feDropShadow dx="0" dy="17" stdDeviation="15" flood-color="#384261" flood-opacity=".09"/>
+    </filter>
+    <filter id="cursor-shadow" x="-40%" y="-40%" width="190%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#293655" flood-opacity=".15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#faf9f6"/>
+
+  <!-- The app mark is preserved exactly, including the corrected folded document. -->
+  <svg x="73" y="66" width="62" height="62" viewBox="0 0 1024 1024" fill="none">
+    <g stroke="#3a56cc" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M332 122H240C175 122 122 175 122 240V332M689 122H781C846 122 899 175 899 240V332M122 689V782C122 847 175 900 240 900H332M689 900H781C846 900 899 847 899 782V689" stroke-width="60"/>
+      <path d="M519 266H388C357 266 332 291 332 322V700C332 731 357 756 388 756H650C681 756 706 731 706 700V454C706 439 700 425 690 414L559 283C548 272 534 266 519 266Z" stroke-width="47"/>
+      <path d="M519 270V422C519 440 533 454 551 454H701" stroke-width="47"/>
+    </g>
+  </svg>
+  <text x="149" y="114" fill="#292b30" font-family="Arial, Liberation Sans, sans-serif" font-size="49" font-weight="700" letter-spacing="-2.8">qopy</text>
+
+  <g font-family="Arial, Liberation Sans, sans-serif" font-size="72" font-weight="500" letter-spacing="-3">
+    <text x="78" y="278" fill="#292b30">Copy text from</text>
+    <text x="78" y="361" fill="#3a56cc">your screen.</text>
+  </g>
+  <path d="M80 383C184 370 347 371 478 381" stroke="#94a4e6" stroke-width="3" stroke-linecap="round"/>
+
+  <g transform="translate(79 506)">
+    <rect width="143" height="42" rx="21" fill="#f0f0eb"/>
+    <circle cx="22" cy="21" r="3.5" fill="#3a56cc"/>
+    <text x="36" y="27" fill="#666972" font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="500">macOS 14+</text>
+  </g>
+
+</svg>
