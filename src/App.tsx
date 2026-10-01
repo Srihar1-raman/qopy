@@ -5,7 +5,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowDownToLine, ArrowUpRight, ChevronDown, Command, Github, LockKeyhole, MousePointer2, ScanLine, X } from "lucide-react";
-import { track } from "@vercel/analytics";
 import { PrivacyContent, TermsContent } from "./components/LegalContent";
 import { HeroDemo } from "./components/HeroDemo";
 
@@ -26,10 +25,9 @@ function QopyMark({ className = "" }: { className?: string }) {
   );
 }
 
-function DownloadLink({ location, compact = false }: { location: "top" | "bottom"; compact?: boolean }) {
+function DownloadLink({ compact = false }: { compact?: boolean }) {
   return (
-    <a className={`download-button${compact ? " compact" : ""}`} href={MAC_DOWNLOAD}
-      onClick={() => { if (import.meta.env.PROD) track(`download_click_${location}`); }}>
+    <a className={`download-button${compact ? " compact" : ""}`} href={MAC_DOWNLOAD}>
       <ArrowDownToLine size={18} aria-hidden="true" />
       Download for Mac
     </a>
@@ -76,7 +74,7 @@ export default function App() {
           <div className="hero-copy">
             <h1 id="hero-title">Copy text from<br /><span className="qopy-word">your screen<svg viewBox="0 0 256 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11C65 2 164 2 251 8" /></svg></span>.</h1>
             <p className="hero-description">Select text in images or videos and copy it to your clipboard.</p>
-            <div className="hero-actions"><DownloadLink location="top" /><span className="download-note">For macOS 14 and later</span></div>
+            <div className="hero-actions"><DownloadLink /><span className="download-note">For macOS 14 and later</span></div>
           </div>
           <HeroDemo />
         </section>
@@ -97,7 +95,7 @@ export default function App() {
         </section>
 
         <section className="setup-section page-width" id="get-started" aria-labelledby="setup-title">
-          <div className="setup-intro"><h2 id="setup-title">Install qopy</h2><DownloadLink location="bottom" compact /><span className="setup-platform">macOS 14+ · .dmg download</span></div>
+          <div className="setup-intro"><h2 id="setup-title">Install qopy</h2><DownloadLink compact /><span className="setup-platform">macOS 14+ · .dmg download</span></div>
           <div className="setup-details">
             <details open><summary><span><span className="detail-number">01</span>Move to Applications</span><ChevronDown size={18} /></summary><div className="detail-content"><p>Open the .dmg file, drag qopy into Applications, then open qopy.</p></div></details>
             <details><summary><span><span className="detail-number">02</span>Allow the permissions</span><ChevronDown size={18} /></summary><div className="detail-content"><p>When qopy asks, enable Screen Recording and Accessibility in System Settings → Privacy &amp; Security. These enable screen capture and the keyboard shortcut.</p><p>You can turn either permission off in System Settings at any time.</p></div></details>
@@ -111,7 +109,7 @@ export default function App() {
 
       <dialog ref={dialogRef} className="legal-dialog" aria-labelledby="policy-title" onClose={() => setPolicy(null)} onClick={(event) => { if (event.target === event.currentTarget) setPolicy(null); }}>
         <div className="legal-dialog-inner"><div className="legal-dialog-header"><h2 id="policy-title">{policy === "terms" ? "Terms of service" : "Mac app privacy"}</h2><button className="close-dialog" type="button" autoFocus onClick={() => setPolicy(null)} aria-label="Close dialog"><X size={22} /></button></div>
-          {policy === "terms" ? <TermsContent /> : <><p className="policy-context">The policy below covers the downloaded Mac app. This website uses Vercel Analytics, as described in the Terms.</p><PrivacyContent /></>}
+          {policy === "terms" ? <TermsContent /> : <><p className="policy-context">The policy below covers the downloaded Mac app. This website does not include a client-side analytics script. Its hosting provider may process request data to serve and protect the site.</p><PrivacyContent /></>}
         </div>
       </dialog>
     </>

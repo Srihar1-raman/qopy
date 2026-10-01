@@ -1,4 +1,4 @@
-// Policy wording retained from the existing site; presentation only.
+// Existing app policy retained; website wording reflects the current frontend.
 export function TermsContent() {
   return <div className="legal-copy">
               <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
@@ -24,8 +24,8 @@ export function TermsContent() {
               <h3>7. LIMITATION OF LIABILITY</h3>
               <p>In no event shall the developers of qopy be liable for any damages arising out of the use or inability to use the software, including but not limited to loss of data, profits, or business interruption.</p>
 
-              <h3>8. WEBSITE ANALYTICS</h3>
-              <p>The qopy website uses Vercel Analytics for traffic analysis. This applies only to the website at qopy.app, not to the downloaded application. The downloaded .dmg file does not contain any analytics or tracking functionality.</p>
+              <h3>8. WEBSITE</h3>
+              <p>The website at qopy.site does not include a client-side analytics script. Its hosting provider may process request data to deliver and protect the site. This is separate from the downloaded Mac application.</p>
 
               <h3>9. CONTACT</h3>
               <p>For questions about these terms, contact through the GitHub repository or Twitter.</p>

@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "qopy",
+  "compatibility_date": "2026-10-01",
+  "send_metrics": false,
+  "assets": {
+    "directory": "./dist",
+    // Navigation uses hash anchors, not client-side routes. Unknown paths stay 404.
+    "not_found_handling": "none"
+  }
+}
