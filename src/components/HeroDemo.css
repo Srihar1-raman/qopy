@@ -1,0 +1,53 @@
+.hero-demo { --demo-duration: 12s; width: 100%; margin: 0; min-width: 0; }
+.demo-screen { border-radius: 14px; overflow: hidden; border: 1px solid #bfcbe1; background: #dce5f4; box-shadow: 0 10px 30px #2e42750d; position: relative; }
+.demo-desktop { display: block; width: 100%; height: auto; }
+.demo-window-title { font: 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #656d7d; }
+.demo-shortcut-text { font: 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: white; }
+.demo-controls { min-height: 38px; display: flex; align-items: center; justify-content: space-between; color: #7a7f8b; font-size: 11px; padding-inline: 2px; }
+.demo-controls button { display: inline-flex; align-items: center; gap: 5px; background: none; border: 0; padding: 10px 0 10px 12px; color: #626a7a; min-height: 38px; font-size: 11px; }
+.demo-controls button:hover { color: var(--blue); }
+.demo-motion-note { font-size: 10px; }
+.demo-timeline { position: absolute; height: 2px; bottom: 0; inset-inline: 0; background: #8096c12e; }
+.demo-timeline span { display: block; height: 100%; background: #4f6bc8; width: 100%; transform-origin: left; animation: demo-progress var(--demo-duration) linear infinite; }
+.demo-cursor { animation: demo-cursor var(--demo-duration) linear infinite; }
+.demo-selection { opacity: 0; animation: demo-selection var(--demo-duration) linear infinite; }
+.demo-copy-toast { opacity: 0; animation: demo-copy-toast var(--demo-duration) linear infinite; }
+.demo-capture-shortcut { opacity: 0; animation: demo-capture-shortcut var(--demo-duration) linear infinite; }
+.demo-paste-shortcut { opacity: 0; animation: demo-paste-shortcut var(--demo-duration) linear infinite; }
+.demo-pasted-text, .demo-pasted-caret { opacity: 0; animation: demo-pasted var(--demo-duration) linear infinite; }
+.demo-empty-caret { opacity: 0; animation: demo-empty-caret var(--demo-duration) linear infinite; }
+.demo-editor-focus { opacity: 0; animation: demo-editor-focus var(--demo-duration) linear infinite; }
+.hero-demo[data-paused="true"] *, .hero-demo[data-paused="true"] *::before, .hero-demo[data-paused="true"] *::after { animation-play-state: paused; }
+@keyframes demo-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes demo-cursor {
+  0%, 8% { transform: translate(535px, 183px); opacity: 1; }
+  18%, 22% { transform: translate(89px, 134px); opacity: 1; }
+  38%, 46% { transform: translate(349px, 221px); opacity: 1; }
+  60%, 62% { transform: translate(315px, 313px); opacity: 1; }
+  67%, 80% { transform: translate(537px, 354px); opacity: 1; }
+  86% { transform: translate(537px, 354px); opacity: 1; }
+  93%, 97% { transform: translate(537px, 354px); opacity: 0; }
+  100% { transform: translate(535px, 183px); opacity: 1; }
+}
+@keyframes demo-selection {
+  0%, 21.9% { width: 0; height: 0; opacity: 0; }
+  22% { width: 0; height: 0; opacity: 1; }
+  38%, 45% { width: 260px; height: 87px; opacity: 1; }
+  47%, 100% { width: 260px; height: 87px; opacity: 0; }
+}
+@keyframes demo-copy-toast { 0%, 44% { opacity: 0; transform: translateY(4px); } 47%, 58% { opacity: 1; transform: translateY(0); } 63%, 100% { opacity: 0; transform: translateY(-4px); } }
+@keyframes demo-capture-shortcut { 0%, 11% { opacity: 0; } 14%, 24% { opacity: 1; } 29%, 100% { opacity: 0; } }
+@keyframes demo-paste-shortcut { 0%, 62% { opacity: 0; } 65%, 72% { opacity: 1; } 77%, 100% { opacity: 0; } }
+@keyframes demo-pasted { 0%, 67.9% { opacity: 0; } 68%, 93% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes demo-empty-caret { 0%, 59% { opacity: 0; } 60%, 67.9% { opacity: 1; } 68%, 100% { opacity: 0; } }
+@keyframes demo-editor-focus { 0%, 58% { opacity: 0; } 61%, 93% { opacity: 1; } 98%, 100% { opacity: 0; } }
+.hero-demo[data-reduced-motion="true"] .demo-pasted-text,
+.hero-demo[data-reduced-motion="true"] .demo-editor-focus { opacity: 1; }
+.hero-demo[data-reduced-motion="true"] .demo-cursor,
+.hero-demo[data-reduced-motion="true"] .demo-timeline { display: none; }
+@media (max-width: 760px) { .hero-demo { max-width: 540px; margin-inline: auto; } .demo-screen { border-radius: 11px; } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-demo * { animation: none !important; }
+  .demo-pasted-text, .demo-editor-focus { opacity: 1; }
+  .demo-cursor, .demo-timeline { display: none; }
+}

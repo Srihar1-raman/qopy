@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="362" height="164" viewBox="0 0 362 164">
+  <rect width="362" height="164" rx="3" fill="#fffef9"/>
+  <path d="M0 163.5H362" stroke="#e9e7df"/>
+  <text x="35" y="43" font-family="Arial, sans-serif" font-size="15" fill="#777f8d">Order number</text>
+  <text x="35" y="91" font-family="Georgia, serif" font-size="35" fill="#394662">QP–2048</text>
+  <path d="M35 126H281M35 139H214" stroke="#e6e6e0" stroke-width="3" stroke-linecap="round"/>
+</svg>
