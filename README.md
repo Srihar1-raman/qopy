@@ -9,7 +9,7 @@ Vite + React landing page for the Mac app. Use this same repository for Cloudfla
 - Worker: `qopy`, serving the local Vite build with Wrangler
 - `combif1am.site` belongs to the separate `folio-combif1am` Worker; do not change it
 - `qopy.site` remains on Vercel, unchanged
-- Cloudflare GitHub auto-deploy is not configured; the migration commits have not been pushed
+- Cloudflare GitHub auto-deploy is not configured; production updates are deployed directly with Wrangler
 
 ## Local development
 
