@@ -1,0 +1,16 @@
+# qopy
+
+> A Mac menu bar utility for selecting text in images or videos and copying it to the clipboard.
+
+The canonical website is https://qopy.combif1am.site/. qopy requires macOS 14 or later. The website's animated walkthrough is a simulated demo, not a native app recording.
+
+## Product
+
+- [Product and installation notes](https://qopy.combif1am.site/index.md): Plain-text version of the site's product description, shortcut, requirements, and installation steps.
+- [Website](https://qopy.combif1am.site/): Interactive page with Privacy and Terms dialogs; those dialogs do not have separate page URLs.
+- [Mac download](https://github.com/Srihar1-raman/qopy-releases/releases/latest/download/qopy.dmg): The latest .dmg distributed through GitHub Releases.
+
+## Optional
+
+- [Website repository](https://github.com/Srihar1-raman/qopy): Source repository linked by the website.
+- [Release repository](https://github.com/Srihar1-raman/qopy-releases): Download releases.

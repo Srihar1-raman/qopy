@@ -1,0 +1,23 @@
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: <https://qopy.combif1am.site/>; rel="canonical", </llms.txt>; rel="describedby"
+  X-Robots-Tag: noindex
+
+/social/qopy-share-v1.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/social/qopy-demo-v1.mp4
+  Content-Type: video/mp4
+  Cache-Control: public, max-age=31536000, immutable

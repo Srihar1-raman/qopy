@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">qopy — Copy text from your screen.</title>
+  <desc id="description">The qopy logo, with an abstract text selection and copy motif, on an off-white background. For macOS 14 and later.</desc>
+  <!-- Editable, code-native social card. Palette and QopyMark geometry match src/App.tsx. -->
+  <defs>
+    <filter id="paper-shadow" x="-30%" y="-30%" width="160%" height="185%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#384261" flood-opacity=".04"/>
+      <feDropShadow dx="0" dy="17" stdDeviation="15" flood-color="#384261" flood-opacity=".09"/>
+    </filter>
+    <filter id="cursor-shadow" x="-40%" y="-40%" width="190%" height="200%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#293655" flood-opacity=".15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="#faf9f6"/>
+
+  <!-- The app mark is preserved exactly, including the corrected folded document. -->
+  <svg x="73" y="66" width="62" height="62" viewBox="0 0 1024 1024" fill="none">
+    <g stroke="#3a56cc" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M332 122H240C175 122 122 175 122 240V332M689 122H781C846 122 899 175 899 240V332M122 689V782C122 847 175 900 240 900H332M689 900H781C846 900 899 847 899 782V689" stroke-width="60"/>
+      <path d="M519 266H388C357 266 332 291 332 322V700C332 731 357 756 388 756H650C681 756 706 731 706 700V454C706 439 700 425 690 414L559 283C548 272 534 266 519 266Z" stroke-width="47"/>
+      <path d="M519 270V422C519 440 533 454 551 454H701" stroke-width="47"/>
+    </g>
+  </svg>
+  <text x="149" y="114" fill="#292b30" font-family="Arial, Liberation Sans, sans-serif" font-size="49" font-weight="700" letter-spacing="-2.8">qopy</text>
+
+  <g font-family="Arial, Liberation Sans, sans-serif" font-size="72" font-weight="500" letter-spacing="-3">
+    <text x="78" y="278" fill="#292b30">Copy text from</text>
+    <text x="78" y="361" fill="#3a56cc">your screen.</text>
+  </g>
+  <path d="M80 383C184 370 347 371 478 381" stroke="#94a4e6" stroke-width="3" stroke-linecap="round"/>
+
+  <g transform="translate(79 506)">
+    <rect width="143" height="42" rx="21" fill="#f0f0eb"/>
+    <circle cx="22" cy="21" r="3.5" fill="#3a56cc"/>
+    <text x="36" y="27" fill="#666972" font-family="Arial, Liberation Sans, sans-serif" font-size="18" font-weight="500">macOS 14+</text>
+  </g>
+
+  <!-- An abstract selection-to-clipboard illustration, not an app screenshot. -->
+  <rect x="704" y="132" width="421" height="406" rx="27" fill="#edf0f7"/>
+  <g stroke="#b7c0d8" stroke-width="1.5" stroke-linecap="round">
+    <path d="M1087 158v10m-5-5h10M732 506v10m-5-5h10"/>
+  </g>
+
+  <g transform="rotate(-6 911 285)">
+    <rect x="753" y="192" width="310" height="221" rx="12" fill="#fffefa" stroke="#ffffff" stroke-width="1.5" filter="url(#paper-shadow)"/>
+    <path d="M780 224h46" stroke="#d8dce5" stroke-width="6" stroke-linecap="round"/>
+    <path d="M779 243h256" stroke="#ecece9" stroke-width="1.5"/>
+    <rect x="778" y="267" width="258" height="88" fill="#e7edfc" stroke="#6a82d6" stroke-width="1.5"/>
+    <g fill="#687ebd">
+      <rect x="794" y="284" width="51" height="9" rx="2"/>
+      <rect x="853" y="284" width="88" height="9" rx="2"/>
+      <rect x="949" y="284" width="68" height="9" rx="2"/>
+      <rect x="794" y="306" width="80" height="9" rx="2"/>
+      <rect x="882" y="306" width="104" height="9" rx="2"/>
+      <rect x="794" y="328" width="53" height="9" rx="2"/>
+      <rect x="855" y="328" width="95" height="9" rx="2"/>
+    </g>
+    <g fill="#fffefa" stroke="#6a82d6" stroke-width="1.5">
+      <rect x="775" y="264" width="6" height="6"/><rect x="1033" y="264" width="6" height="6"/>
+      <rect x="775" y="352" width="6" height="6"/><rect x="1033" y="352" width="6" height="6"/>
+    </g>
+    <path d="M781 381h120" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="rotate(3 976 451)">
+    <rect x="842" y="403" width="263" height="97" rx="12" fill="#ffffff" stroke="#dfe4ee" filter="url(#paper-shadow)"/>
+    <g stroke="#3a56cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="864" y="434" width="21" height="25" rx="3"/>
+      <path d="M870 434v-5a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v19a3 3 0 0 1-3 3h-6"/>
+    </g>
+    <path d="M913 441h160M913 461h103" stroke="#a1accb" stroke-width="6" stroke-linecap="round"/>
+    <path d="M1024 454v15" stroke="#3a56cc" stroke-width="1.5"/>
+  </g>
+
+  <path d="M1040 341L1044 378L1054 367L1063 387L1072 383L1063 363L1078 362Z" fill="#3a56cc" stroke="#fff" stroke-width="3" stroke-linejoin="round" filter="url(#cursor-shadow)"/>
+  <path d="M786 431C783 458 791 476 817 474m-10-7 11 7-9 9" stroke="#9aa9ca" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

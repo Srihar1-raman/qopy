@@ -70,3 +70,17 @@ After each deployment, verify HTTPS, assets, the demo/pause control, legal dialo
 Cloudflare may [inject Web Analytics at the edge](https://blog.cloudflare.com/the-rum-diaries-enabling-web-analytics-by-default/), independently of source code. Check rendered scripts when changing analytics disclosures. A future analytics exclusion must be scoped to this hostname so the portfolio's settings are preserved.
 
 **Rollback:** use the `qopy` Worker's deployment history to restore its previous version. To remove the new hostname, remove only its Custom Domain association and its matching Wrangler route. The root portfolio and original Vercel website are separate and should remain untouched.
+
+## Search, agents, and link previews
+
+`npm run build` builds Vite, prerenders the real React page into HTML, then runs `scripts/verify-seo.mjs`. The browser hydrates that markup. Product text and links therefore exist without JavaScript; keep the build step intact when changing hosting.
+
+- `/robots.txt` permits crawling and advertises `/sitemap.xml`. The sitemap contains only the canonical homepage. Section anchors and Privacy/Terms dialogs are not separate pages. Do not invent `lastmod` dates or sitemap routes.
+- `/llms.txt` is a small optional agent index linked to `/index.md`, a maintained Markdown counterpart. The Markdown page is marked `noindex` to avoid a duplicate search result. These follow the [llms.txt proposal](https://llmstxt.org/); they do not guarantee indexing, AI citations, or rankings. [Google's AI guidance](https://developers.google.com/search/docs/appearance/ai-features) requires no special AI text file.
+- JSON-LD describes the website, page, and Mac utility using existing visible facts. No invented offer, price, review, or rating is supplied, so don't claim [Google software-app rich-result eligibility](https://developers.google.com/search/docs/appearance/structured-data/software-app).
+- `/social/qopy-share-v1.png` is the static 1200×630 card (about 51 KB). Its editable source is `design/share-card.svg`. Metadata includes absolute HTTPS URLs, dimensions, media type, and alt text. This aligns with [Open Graph](https://ogp.me/) and [LinkedIn's sharing guidance](https://www.linkedin.com/help/linkedin/answer/a521928/making-your-website-shareable-on-linkedin?lang=en).
+- `/social/qopy-demo-v1.mp4` is the 12-second simulated walkthrough (H.264, no audio, about 159 KB). `og:video` offers it as a progressive enhancement: [Apple Messages documents direct MP4 previews](https://developer.apple.com/documentation/technotes/tn3156-create-rich-previews-for-messages/), but playback depends on the client and settings. X remains a `summary_large_image` card. Do not promise GIF/SVG animation or video playback across all platforms; no X Player Card or native app recording is implied.
+
+Keep versioned media filenames immutable. Publish a new filename when changing a card/video and update the metadata; social platforms can cache old previews. Re-fetch with the platform's official inspector where available. Platform account-based previews and search indexing are not validated merely by a successful deployment.
+
+After deployment, check raw HTML and live crawler files, image/video MIME types and HTTP responses. Cloudflare's zone-level bot controls can override origin crawl rules; a robots allowance is not a firewall bypass. Maintain the explicit legal revision date when policy wording actually changes.

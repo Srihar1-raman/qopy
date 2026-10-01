@@ -1,7 +1,7 @@
 // Existing app policy retained; website wording reflects the current frontend.
 export function TermsContent() {
   return <div className="legal-copy">
-              <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
+              <p><strong>Last updated:</strong> October 1, 2026</p>
 
               <h3>1. ACCEPTANCE OF TERMS</h3>
               <p>By downloading, installing, or using qopy, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the application.</p>
@@ -34,7 +34,7 @@ export function TermsContent() {
 
 export function PrivacyContent() {
   return <div className="legal-copy">
-              <p><strong>Last updated:</strong> {new Date().getFullYear()}</p>
+              <p><strong>Last updated:</strong> October 1, 2026</p>
 
               <h3>1. PRIVACY COMMITMENT</h3>
               <p>qopy operates entirely offline. All text recognition happens locally on the device using Apple's Vision Framework.</p>

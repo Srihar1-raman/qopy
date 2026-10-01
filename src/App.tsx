@@ -105,7 +105,7 @@ export default function App() {
 
       </main>
 
-      <footer className="site-footer page-width"><span>© {new Date().getFullYear()} qopy</span><div className="footer-links"><a href="https://twitter.com/combif1am" target="_blank" rel="noopener noreferrer">Twitter <ArrowUpRight size={12} /></a><button type="button" onClick={() => setPolicy("privacy")}>Privacy</button><button type="button" onClick={() => setPolicy("terms")}>Terms</button></div></footer>
+      <footer className="site-footer page-width"><span suppressHydrationWarning>© {new Date().getFullYear()} qopy</span><div className="footer-links"><a href="https://twitter.com/combif1am" target="_blank" rel="noopener noreferrer">Twitter <ArrowUpRight size={12} /></a><button type="button" onClick={() => setPolicy("privacy")}>Privacy</button><button type="button" onClick={() => setPolicy("terms")}>Terms</button></div></footer>
 
       <dialog ref={dialogRef} className="legal-dialog" aria-labelledby="policy-title" onClose={() => setPolicy(null)} onClick={(event) => { if (event.target === event.currentTarget) setPolicy(null); }}>
         <div className="legal-dialog-inner"><div className="legal-dialog-header"><h2 id="policy-title">{policy === "terms" ? "Terms of service" : "Mac app privacy"}</h2><button className="close-dialog" type="button" autoFocus onClick={() => setPolicy(null)} aria-label="Close dialog"><X size={22} /></button></div>
