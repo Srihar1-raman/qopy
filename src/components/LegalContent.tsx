@@ -25,7 +25,7 @@ export function TermsContent() {
               <p>In no event shall the developers of qopy be liable for any damages arising out of the use or inability to use the software, including but not limited to loss of data, profits, or business interruption.</p>
 
               <h3>8. WEBSITE</h3>
-              <p>The website at qopy.site does not include a client-side analytics script. Its hosting provider may process request data to deliver and protect the site. This is separate from the downloaded Mac application.</p>
+              <p>The website at qopy.combif1am.site uses Cloudflare Web Analytics. Its hosting provider may also process request data to deliver and protect the site. This is separate from the downloaded Mac application.</p>
 
               <h3>9. CONTACT</h3>
               <p>For questions about these terms, contact through the GitHub repository or Twitter.</p>

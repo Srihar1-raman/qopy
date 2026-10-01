@@ -109,7 +109,7 @@ export default function App() {
 
       <dialog ref={dialogRef} className="legal-dialog" aria-labelledby="policy-title" onClose={() => setPolicy(null)} onClick={(event) => { if (event.target === event.currentTarget) setPolicy(null); }}>
         <div className="legal-dialog-inner"><div className="legal-dialog-header"><h2 id="policy-title">{policy === "terms" ? "Terms of service" : "Mac app privacy"}</h2><button className="close-dialog" type="button" autoFocus onClick={() => setPolicy(null)} aria-label="Close dialog"><X size={22} /></button></div>
-          {policy === "terms" ? <TermsContent /> : <><p className="policy-context">The policy below covers the downloaded Mac app. This website does not include a client-side analytics script. Its hosting provider may process request data to serve and protect the site.</p><PrivacyContent /></>}
+          {policy === "terms" ? <TermsContent /> : <><p className="policy-context">The policy below covers the downloaded Mac app. This website uses Cloudflare Web Analytics. Its hosting provider may also process request data to serve and protect the site.</p><PrivacyContent /></>}
         </div>
       </dialog>
     </>

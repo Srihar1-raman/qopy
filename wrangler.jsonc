@@ -3,6 +3,13 @@
   "name": "qopy",
   "compatibility_date": "2026-10-01",
   "send_metrics": false,
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "qopy.combif1am.site",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": "./dist",
     // Navigation uses hash anchors, not client-side routes. Unknown paths stay 404.
